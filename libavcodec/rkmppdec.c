@@ -393,6 +393,8 @@ retry_get_frame :
             framecontext->frame = mppframe;
 
             frame->data[3] = (uint8_t*)primedata;
+            frame->data[0] = (uint8_t *)mpp_buffer_get_ptr(buffer);
+            frame->data[1] = frame->data[0] + primedata->offsets[1];
             frame->buf[0]  = av_buffer_create((uint8_t*)primedata, sizeof(*primedata), ffrkmpp_release_frame,
                                                 framecontextref, AV_BUFFER_FLAG_READONLY);
 
