@@ -129,7 +129,6 @@ static int v4l2_request_set_drm_descriptor(V4L2RequestDescriptor *req, struct v4
     switch (pixelformat) {
     case V4L2_PIX_FMT_NV12:
         layer->format = DRM_FORMAT_NV12;
-        desc->objects[0].format_modifier = DRM_FORMAT_MOD_LINEAR;
         break;
 #ifdef DRM_FORMAT_MOD_ALLWINNER_TILED
     case V4L2_PIX_FMT_SUNXI_TILED_NV12:
